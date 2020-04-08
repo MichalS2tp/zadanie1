@@ -28,13 +28,13 @@
         
         input.addEventListener("input", () => {
             if(radio[0].checked){
-                zad(/^<.+?>$/);              
+                zadanie(/^<.+?>$/);              
             }
             else if(radio[1].checked){
-                zad(/^<a href=".+">.+<\/a>$/);
+                zadanie(/^<a href=".+">.+<\/a>$/);
             }
             else if(radio[2].checked){
-                zad(/^(\+|-)[0-9]+$/);
+                zadanie(/^(\+|-)[0-9]+$/);
             }
            
         })
