@@ -1,0 +1,68 @@
+<html>
+<head>
+<style>
+    input{
+        outline: none;
+		margin-top: 50px;
+		padding: 20px; 
+		margin-left: 40%;
+		
+    }
+	body{
+	background-color: grey ;
+	}
+	
+    <script>
+	
+			var radio = document.querySelectorAll("input[type='radio']");
+			var input = document.querySelector("input");
+
+			var zad = (reg) => {
+            if(input.value.match(reg))
+                input.style.borderColor = 'green'
+                
+            else
+                input.style.borderColor = 'red'
+        };
+
+        
+        input.addEventListener("input", () => {
+            if(radio[0].checked){
+                zad(/^<.+?>$/);              
+            }
+            else if(radio[1].checked){
+                zad(/^<a href=".+">.+<\/a>$/);
+            }
+            else if(radio[2].checked){
+                zad(/^(\+|-)[0-9]+$/);
+            }
+           
+        })
+		
+		
+				<title> Zadania </title>
+    </script>
+</style>
+</head>
+<body>
+
+    <input type="text"><br>
+
+    <input type="radio" name="zadanie" id="zadanie1">
+    <label for="zadanie1">zadanie 1 (znaczniki)</label><br>
+
+    <input type="radio" name="zadanie" id="zadanie2">
+    <label for="zadanie2">zadanie 2 (link)</label><br>
+
+    <input type="radio" name="zadanie" id="zadanie3">
+    <label for="zadanie3">zadanie 3 (liczba całkowita)</label>
+	
+	
+			<div id="input">
+			</div>
+			<div id="body">
+			</div>
+    
+
+</body>
+</html>
